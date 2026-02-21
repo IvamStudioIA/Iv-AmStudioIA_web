@@ -1996,7 +1996,11 @@
         </div>
         
         <div class="form-container">
-          <form id="contact-form">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="3f9c4d3c-c739-4b1d-9dd0-405e774e2420">
+            <input type="hidden" name="subject" value="Nuevo contacto desde ivamstudioia.com">
+            <input type="hidden" name="from_name" value="Web ivamstudioia.com">
+
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -2007,7 +2011,7 @@
                 <input type="email" id="email" name="email" required>
               </div>
             </div>
-            
+
             <div class="form-row">
               <div class="form-group">
                 <label for="empresa">Empresa</label>
@@ -2018,11 +2022,11 @@
                 <input type="text" id="sector" name="sector">
               </div>
             </div>
-            
+
             <div class="form-row">
               <div class="form-group">
                 <label for="volumen">Volumen leads</label>
-                <select id="volumen" name="volumen">
+                <select id="volumen" name="volumen_leads">
                   <option value="">Selecciona...</option>
                   <option value="0-50">0-50 / mes</option>
                   <option value="50-200">50-200 / mes</option>
@@ -2035,18 +2039,18 @@
                 <input type="tel" id="telefono" name="telefono">
               </div>
             </div>
-            
+
             <div class="form-group">
               <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu negocio y qué te gustaría automatizar..."></textarea>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu negocio y qué necesitas..."></textarea>
             </div>
-            
+
             <div class="form-checkbox">
               <input type="checkbox" id="privacidad" name="privacidad" required>
               <label for="privacidad">Acepto la <a href="/privacidad.html" target="_blank">Política de Privacidad</a></label>
             </div>
-            
-            <button type="submit" class="btn-submit">Enviar y agendar</button>
+
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
           </form>
         </div>
       </div>
