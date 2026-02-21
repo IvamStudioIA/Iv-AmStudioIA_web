@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones | Iv&AmStudio IA</title>
+  <meta name="description" content="Términos y condiciones de uso de los servicios de Iv&AmStudio IA" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-bg: #0a0a0a;
+      --color-bg-card: #111111;
+      --color-primary: #d4af37;
+      --color-accent: #4ecdc4;
+      --color-text: #ffffff;
+      --color-text-soft: #a0a0a0;
+      --header-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-text);
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--color-text);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* LEGAL CONTENT */
+    .legal-section {
+      padding: calc(var(--header-height) + 3rem) 0 4rem;
+      min-height: 100vh;
+    }
+
+    .legal-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .legal-header h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+
+    .legal-header p {
+      color: var(--color-text-soft);
+      font-size: 1rem;
+    }
+
+    .legal-content {
+      background: var(--color-bg-card);
+      border-radius: 16px;
+      padding: 3rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .legal-content h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: var(--color-primary);
+    }
+
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--color-text);
+    }
+
+    .legal-content p {
+      margin-bottom: 1rem;
+      color: var(--color-text-soft);
+    }
+
+    .legal-content ul, .legal-content ol {
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      color: var(--color-text-soft);
+    }
+
+    .legal-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-content a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .legal-content a:hover {
+      color: #e5c04a;
+    }
+
+    .legal-content strong {
+      color: var(--color-text);
+    }
+
+    .info-box {
+      background: rgba(212, 175, 55, 0.1);
+      border-left: 4px solid var(--color-primary);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: var(--color-text);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: var(--color-text-soft);
+      font-size: 0.85rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .legal-header h1 {
+        font-size: 2rem;
+      }
+
+      .legal-content {
+        padding: 2rem 1.5rem;
+      }
+
+      .legal-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .legal-content h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="brand">
+        <span class="brand-name">Iv&AmStudio IA</span>
+      </a>
+      <a href="/" class="btn btn-outline">← Volver al inicio</a>
+    </div>
+  </header>
+
+  <!-- LEGAL CONTENT -->
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-header">
+        <h1>Términos y Condiciones</h1>
+        <p>Última actualización: 21 de febrero de 2026</p>
+      </div>
+
+      <div class="legal-content">
+        <div class="info-box">
+          <p><strong>Prestador de servicios:</strong> Amanda Cabeza Rodríguez (Iv&AmStudioIA)<br>
+          <strong>NIF:</strong> 54064070V<br>
+          <strong>Dirección:</strong> Calle Abora 6, Bloque 5, Vivienda 93, 38111 Santa Cruz de Tenerife<br>
+          <strong>Email:</strong> <a href="mailto:ivamstudioia@gmail.com">ivamstudioia@gmail.com</a><br>
+          <strong>Teléfono:</strong> <a href="tel:+34629016049">+34 629 016 049</a></p>
+        </div>
+
+        <h2>1. Objeto y Ámbito de Aplicación</h2>
+        <p>Los presentes términos y condiciones generales regulan el uso del sitio web <strong>ivamstudioia.com</strong> (en adelante, el "Sitio Web") y la contratación de los servicios ofrecidos por Amanda Cabeza Rodríguez bajo el nombre comercial <strong>Iv&AmStudioIA</strong> (en adelante, el "Prestador").</p>
+        <p>El acceso y uso del Sitio Web atribuye la condición de usuario (en adelante, el "Usuario") e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en estos términos y condiciones en la versión publicada en el momento en que el Usuario acceda al Sitio Web.</p>
+
+        <h2>2. Servicios Ofrecidos</h2>
+        <p>Iv&AmStudioIA ofrece servicios de desarrollo e implementación de soluciones basadas en inteligencia artificial, que incluyen pero no se limitan a:</p>
+        <ul>
+          <li><strong>Asistentes virtuales omnicanal:</strong> Desarrollo e implementación de chatbots y asistentes virtuales inteligentes para múltiples canales de comunicación</li>
+          <li><strong>Automatización de procesos:</strong> Implementación de flujos de trabajo automatizados mediante herramientas de IA</li>
+          <li><strong>Cualificación de leads:</strong> Sistemas de IA para identificar y priorizar oportunidades comerciales</li>
+          <li><strong>Agendamiento automático:</strong> Integración de sistemas de agenda inteligentes</li>
+          <li><strong>Consultoría en IA:</strong> Asesoramiento estratégico sobre implementación de soluciones de inteligencia artificial</li>
+          <li><strong>Integración de APIs:</strong> Conexión con servicios externos (Claude API, Supabase, N8N, entre otros)</li>
+        </ul>
+
+        <h2>3. Condiciones de Contratación</h2>
+
+        <h3>3.1. Proceso de Contratación</h3>
+        <p>La contratación de servicios se realiza mediante los siguientes pasos:</p>
+        <ol>
+          <li>El Usuario solicita información a través del formulario de contacto o por email</li>
+          <li>El Prestador analiza las necesidades y elabora una propuesta personalizada</li>
+          <li>Se acuerdan los términos específicos del servicio, plazos y presupuesto</li>
+          <li>Se formaliza el contrato mediante aceptación escrita (email o documento firmado)</li>
+          <li>Se realiza el pago según las condiciones acordadas</li>
+          <li>Se inicia la prestación del servicio</li>
+        </ol>
+
+        <h3>3.2. Presupuestos y Precios</h3>
+        <p>Todos los presupuestos son personalizados y se elaboran tras un análisis de las necesidades del cliente. Los precios incluyen:</p>
+        <ul>
+          <li>Análisis inicial y consultoría</li>
+          <li>Desarrollo e implementación de la solución</li>
+          <li>Período de prueba y ajustes (según lo acordado)</li>
+          <li>Formación básica para el uso de la solución</li>
+        </ul>
+        <p>Los presupuestos tienen una validez de 30 días desde su emisión, salvo que se indique lo contrario.</p>
+
+        <h3>3.3. Forma de Pago</h3>
+        <p>Las formas de pago aceptadas son:</p>
+        <ul>
+          <li>Transferencia bancaria</li>
+          <li>Bizum (para importes inferiores a 1.000€)</li>
+          <li>PayPal (puede aplicarse una comisión adicional)</li>
+        </ul>
+        <p>El esquema de pago habitual es:</p>
+        <ul>
+          <li><strong>Proyectos pequeños (hasta 2.000€):</strong> 100% al inicio</li>
+          <li><strong>Proyectos medianos (2.000€ - 10.000€):</strong> 50% al inicio, 50% a la entrega</li>
+          <li><strong>Proyectos grandes (más de 10.000€):</strong> Pago por hitos acordados</li>
+        </ul>
+
+        <h3>3.4. Facturación</h3>
+        <p>Todas las operaciones están sujetas al IVA vigente en España (21% para servicios profesionales). Se emitirá factura conforme a la normativa fiscal española.</p>
+
+        <h2>4. Obligaciones del Prestador</h2>
+        <p>El Prestador se compromete a:</p>
+        <ul>
+          <li>Prestar los servicios con la diligencia profesional exigible</li>
+          <li>Cumplir con los plazos acordados, salvo causas de fuerza mayor</li>
+          <li>Mantener la confidencialidad de la información del cliente</li>
+          <li>Informar de cualquier incidencia que pueda afectar al proyecto</li>
+          <li>Proporcionar soporte técnico durante el período acordado</li>
+          <li>Cumplir con la normativa de protección de datos (RGPD y LOPDGDD)</li>
+        </ul>
+
+        <h2>5. Obligaciones del Cliente</h2>
+        <p>El Cliente se compromete a:</p>
+        <ul>
+          <li>Proporcionar información veraz y completa sobre sus necesidades</li>
+          <li>Facilitar el acceso a los sistemas necesarios para la implementación</li>
+          <li>Realizar los pagos en los plazos acordados</li>
+          <li>Designar una persona de contacto para el seguimiento del proyecto</li>
+          <li>Revisar y aprobar las entregas en los plazos establecidos</li>
+          <li>Cumplir con las recomendaciones técnicas del Prestador</li>
+          <li>Informar de cualquier problema o incidencia de manera oportuna</li>
+        </ul>
+
+        <h2>6. Plazos de Entrega</h2>
+        <p>Los plazos de entrega se establecerán de manera individualizada para cada proyecto. El Prestador hará todo lo posible por cumplir con los plazos acordados, pero estos quedarán suspendidos en caso de:</p>
+        <ul>
+          <li>Retrasos en la entrega de información o accesos por parte del Cliente</li>
+          <li>Cambios en el alcance del proyecto solicitados por el Cliente</li>
+          <li>Causas de fuerza mayor (fallos de terceros, problemas de infraestructura, etc.)</li>
+          <li>Circunstancias extraordinarias no imputables al Prestador</li>
+        </ul>
+
+        <h2>7. Modificaciones del Proyecto</h2>
+        <p>Cualquier modificación del alcance del proyecto inicialmente acordado deberá:</p>
+        <ul>
+          <li>Ser solicitada por escrito por el Cliente</li>
+          <li>Ser analizada y presupuestada por el Prestador</li>
+          <li>Ser aceptada expresamente por ambas partes</li>
+          <li>Puede implicar ajustes en el precio y/o plazos de entrega</li>
+        </ul>
+
+        <h2>8. Propiedad Intelectual</h2>
+
+        <h3>8.1. Código Personalizado</h3>
+        <p>El código desarrollado específicamente para el Cliente será propiedad del Cliente una vez realizado el pago completo del proyecto. No obstante, el Prestador se reserva el derecho a:</p>
+        <ul>
+          <li>Utilizar componentes genéricos o librerías de código en futuros proyectos</li>
+          <li>Incluir el proyecto en su portfolio (salvo acuerdo de confidencialidad)</li>
+          <li>Reutilizar soluciones técnicas generales (no específicas del Cliente)</li>
+        </ul>
+
+        <h3>8.2. Servicios de Terceros</h3>
+        <p>Las integraciones con servicios de terceros (Claude API, Supabase, N8N, etc.) están sujetas a las licencias y términos de uso de cada proveedor. El Cliente es responsable de:</p>
+        <ul>
+          <li>Obtener y mantener las licencias necesarias de servicios de terceros</li>
+          <li>Cumplir con los términos de servicio de cada proveedor</li>
+          <li>Asumir los costes asociados a estos servicios</li>
+        </ul>
+
+        <h3>8.3. Marca y Materiales del Cliente</h3>
+        <p>Todos los materiales, marcas, logotipos y contenidos proporcionados por el Cliente permanecen bajo su propiedad. El Prestador solo los utilizará para la prestación del servicio contratado.</p>
+
+        <h2>9. Confidencialidad</h2>
+        <p>Ambas partes se comprometen a mantener la confidencialidad de toda la información comercial, técnica y estratégica a la que tengan acceso durante la relación contractual. Esta obligación permanecerá vigente incluso después de la finalización del contrato.</p>
+        <p>Se exceptúa de esta obligación:</p>
+        <ul>
+          <li>Información de dominio público</li>
+          <li>Información que deba revelarse por imperativo legal</li>
+          <li>Información previamente conocida por la parte receptora</li>
+        </ul>
+
+        <h2>10. Garantía y Soporte</h2>
+
+        <h3>10.1. Período de Garantía</h3>
+        <p>El Prestador garantiza el correcto funcionamiento de las soluciones desarrolladas durante un período de 90 días desde la entrega, siempre que:</p>
+        <ul>
+          <li>No se hayan realizado modificaciones no autorizadas</li>
+          <li>Se utilice conforme a las especificaciones técnicas</li>
+          <li>Los servicios de terceros funcionen correctamente</li>
+        </ul>
+
+        <h3>10.2. Soporte Técnico</h3>
+        <p>El soporte técnico incluido cubre:</p>
+        <ul>
+          <li>Resolución de errores en el código desarrollado</li>
+          <li>Asistencia en la configuración inicial</li>
+          <li>Respuesta a dudas sobre el funcionamiento</li>
+        </ul>
+        <p>No incluye:</p>
+        <ul>
+          <li>Desarrollo de nuevas funcionalidades</li>
+          <li>Problemas derivados de servicios de terceros</li>
+          <li>Modificaciones del código por terceros</li>
+          <li>Formación adicional más allá de lo acordado</li>
+        </ul>
+
+        <h2>11. Limitación de Responsabilidad</h2>
+        <p>El Prestador no será responsable de:</p>
+        <ul>
+          <li>Fallos o interrupciones de servicios de terceros (APIs, hosting, etc.)</li>
+          <li>Pérdida de datos causada por el Cliente o terceros</li>
+          <li>Daños indirectos, lucro cesante o pérdida de oportunidades comerciales</li>
+          <li>Uso inadecuado de las soluciones desarrolladas</li>
+          <li>Modificaciones realizadas por el Cliente o terceros</li>
+          <li>Incumplimiento de normativas por parte del Cliente en el uso de las soluciones</li>
+        </ul>
+        <p>En cualquier caso, la responsabilidad del Prestador quedará limitada al importe total pagado por el Cliente por el servicio específico que dio lugar a la reclamación.</p>
+
+        <h2>12. Causa de Fuerza Mayor</h2>
+        <p>Ninguna de las partes será responsable por el incumplimiento de sus obligaciones cuando este sea debido a causas de fuerza mayor, entendidas como aquellas circunstancias ajenas a la voluntad de las partes que impidan el cumplimiento de las obligaciones, incluyendo pero no limitándose a:</p>
+        <ul>
+          <li>Desastres naturales</li>
+          <li>Pandemias o emergencias sanitarias</li>
+          <li>Actos de autoridad</li>
+          <li>Fallos generalizados de infraestructura de internet</li>
+          <li>Ciberataques masivos</li>
+        </ul>
+
+        <h2>13. Resolución del Contrato</h2>
+
+        <h3>13.1. Por el Cliente</h3>
+        <p>El Cliente podrá resolver el contrato en cualquier momento mediante notificación escrita. En tal caso:</p>
+        <ul>
+          <li>Si el proyecto no ha comenzado: devolución del 80% del anticipo</li>
+          <li>Si el proyecto está en curso: se facturará el trabajo realizado hasta la fecha</li>
+          <li>Si el proyecto está finalizado: no procede devolución</li>
+        </ul>
+
+        <h3>13.2. Por el Prestador</h3>
+        <p>El Prestador podrá resolver el contrato en caso de:</p>
+        <ul>
+          <li>Impago por parte del Cliente</li>
+          <li>Incumplimiento grave de las obligaciones del Cliente</li>
+          <li>Imposibilidad técnica sobrevenida no imputable al Prestador</li>
+        </ul>
+
+        <h2>14. Protección de Datos</h2>
+        <p>El tratamiento de datos personales se rige por nuestra <a href="/privacidad.html">Política de Privacidad</a>, que cumple con el RGPD y la LOPDGDD. Cuando el Prestador acceda a datos personales del Cliente en calidad de encargado del tratamiento, se firmará el correspondiente contrato de encargado del tratamiento.</p>
+
+        <h2>15. Ley Aplicable y Jurisdicción</h2>
+        <p>Estos términos y condiciones se rigen por la legislación española. Para la resolución de cualquier controversia derivada de la interpretación o ejecución del presente contrato, las partes se someten expresamente a los Juzgados y Tribunales de Santa Cruz de Tenerife, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+
+        <h2>16. Modificaciones</h2>
+        <p>El Prestador se reserva el derecho a modificar estos términos y condiciones en cualquier momento. Las modificaciones serán efectivas desde su publicación en el Sitio Web. Se recomienda revisar periódicamente estos términos para estar informado de cualquier cambio.</p>
+
+        <h2>17. Nulidad Parcial</h2>
+        <p>Si alguna cláusula de estos términos y condiciones fuera declarada nula o ineficaz, las demás cláusulas permanecerán en vigor sin que queden afectadas por dicha declaración de nulidad.</p>
+
+        <h2>18. Contacto</h2>
+        <p>Para cualquier consulta sobre estos términos y condiciones, puede contactarnos en:</p>
+        <div class="info-box">
+          <p><strong>Amanda Cabeza Rodríguez (Iv&AmStudioIA)</strong><br>
+          Email: <a href="mailto:ivamstudioia@gmail.com">ivamstudioia@gmail.com</a><br>
+          Teléfono: <a href="tel:+34629016049">+34 629 016 049</a><br>
+          Horario: Lunes a Viernes, 10:00-16:00h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        © 2025 Iv&AmStudio IA. Todos los derechos reservados. | <a href="/privacidad.html" style="color: var(--color-primary);">Privacidad</a> | <a href="/terminos.html" style="color: var(--color-primary);">Términos</a> | <a href="/cookies.html" style="color: var(--color-primary);">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
