@@ -451,6 +451,217 @@
       color: var(--color-text);
     }
 
+    /* SAAS FACTORY */
+    #saas-factory {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(17,17,17,0.5) 50%, rgba(0,0,0,0) 100%);
+    }
+
+    .saas-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50px;
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .saas-headline {
+      font-family: "Manrope", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .saas-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-soft);
+      text-align: center;
+      margin: 0 auto 2rem;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .saas-intro {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 900px;
+    }
+
+    .saas-intro p {
+      color: var(--color-text-soft);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .saas-intro p:last-child {
+      margin-bottom: 0;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .saas-phases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .phase-card {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .phase-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-primary);
+    }
+
+    .phase-number {
+      color: var(--color-primary);
+      font-family: "Manrope", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-title {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-description {
+      color: var(--color-text-soft);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .phase-stack {
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .comparison-table {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .comparison-header {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-item {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .comparison-item.market {
+      color: var(--color-text-soft);
+    }
+
+    .comparison-item.factory {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .comparison-item.market::before {
+      content: "❌ ";
+      margin-right: 0.5rem;
+    }
+
+    .comparison-item.factory::before {
+      content: "✓ ";
+      color: var(--color-primary);
+      margin-right: 0.5rem;
+      font-weight: 700;
+    }
+
+    .saas-sectors {
+      text-align: center;
+      color: var(--color-text-soft);
+      font-size: 0.95rem;
+      margin: 2rem 0;
+      line-height: 1.8;
+    }
+
+    .saas-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .metric-card {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: "Manrope", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-label {
+      color: var(--color-text-soft);
+      font-size: 0.85rem;
+    }
+
+    .saas-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .saas-cta-text {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--color-text);
+    }
+
     /* CASOS */
     .casos-grid {
       display: grid;
@@ -1050,6 +1261,14 @@
         margin: 0 auto;
       }
 
+      .saas-phases {
+        grid-template-columns: 1fr;
+      }
+
+      .saas-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -1104,6 +1323,31 @@
         grid-template-columns: 1fr;
       }
 
+      .saas-headline {
+        font-size: 1.8rem;
+      }
+
+      .saas-subtitle {
+        font-size: 1rem;
+      }
+
+      .saas-intro {
+        padding: 1.5rem;
+      }
+
+      .saas-phases {
+        grid-template-columns: 1fr;
+      }
+
+      .saas-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
       .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1136,6 +1380,7 @@
       <nav class="nav">
         <ul class="nav-links">
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#saas-factory">SaaS Factory</a></li>
           <li><a href="#casos">Casos</a></li>
           <li><a href="#planes">Paquetes</a></li>
           <li><a href="#metodo">Método</a></li>
@@ -1194,6 +1439,151 @@
             <div class="stat-description">% Show rate promedio</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAAS FACTORY -->
+  <section id="saas-factory">
+    <div class="container">
+      <div style="text-align: center;">
+        <div class="saas-badge">🏭 SaaS Factory</div>
+      </div>
+
+      <h2 class="saas-headline">
+        La primera fábrica de SaaS con IA nativa de Canarias.
+      </h2>
+
+      <p class="saas-subtitle">
+        Plataformas SaaS completas. IA que no es un parche, sino el motor.
+        Arquitectura blindada. Desplegadas en semanas, no en años.
+        Diseñadas para escalar desde el día uno.
+      </p>
+
+      <div class="saas-intro">
+        <p>
+          La mayoría de agencias te venden un chatbot y lo llaman "transformación digital".
+          Nosotros construimos el sistema operativo completo de tu sector.
+        </p>
+        <p>
+          La SaaS Factory es nuestra metodología de ingeniería para diseñar, desarrollar
+          y desplegar plataformas SaaS de grado empresarial — con inteligencia artificial
+          integrada en cada capa — en una fracción del tiempo y coste que el mercado
+          considera posible.
+        </p>
+        <p>
+          No integramos IA en tu negocio. Construimos tu negocio sobre IA.
+        </p>
+      </div>
+
+      <div class="saas-phases">
+        <div class="phase-card">
+          <div class="phase-number">FASE 1 — CIMIENTOS</div>
+          <h3 class="phase-title">Infraestructura inquebrantable</h3>
+          <p class="phase-description">
+            Base de datos de alto rendimiento. Cifrado AES-256. Autenticación multinivel.
+            Auditoría completa. RGPD desde el diseño.
+          </p>
+          <div class="phase-stack">Stack: PostgreSQL · Supabase · VPS propio · SSL/TLS</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">FASE 2 — MOTOR IA</div>
+          <h3 class="phase-title">Inteligencia artificial como sistema nervioso</h3>
+          <p class="phase-description">
+            No añadimos IA después. La IA es la primera pieza. Agentes especializados que
+            entienden tu sector, tu normativa, tu lenguaje. RAG de última generación.
+          </p>
+          <div class="phase-stack">Stack: Claude API · Embeddings · RAG · Vector Search</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">FASE 3 — ARQUITECTURA</div>
+          <h3 class="phase-title">Plataforma completa, no una demo</h3>
+          <p class="phase-description">
+            Paneles de control. Gestión de usuarios y roles. Pasarelas de pago.
+            Sistemas de suscripción. Módulos interconectados. Todo lo que necesitas
+            para operar como un SaaS real desde el primer día.
+          </p>
+          <div class="phase-stack">Stack: Next.js · React · Stripe · APIs REST</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">FASE 4 — DESPLIEGUE Y ESCALA</div>
+          <h3 class="phase-title">De fábrica a producción en semanas</h3>
+          <p class="phase-description">
+            Despliegue en infraestructura propia. Monitorización 24/7.
+            Optimización continua. Preparado para crecer de 10 a 10.000 usuarios.
+          </p>
+          <div class="phase-stack">Stack: Vercel · VPS · CI/CD · Monitorización</div>
+        </div>
+      </div>
+
+      <div class="comparison-table">
+        <h3 class="comparison-header">Lo que hace el mercado → Lo que hace la SaaS Factory</h3>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">Te vende un chatbot genérico</div>
+          <div class="comparison-item factory">Construye una plataforma completa con IA nativa</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">Usa plantillas de Zapier</div>
+          <div class="comparison-item factory">Desarrolla arquitecturas a medida</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">Base de datos en Airtable</div>
+          <div class="comparison-item factory">PostgreSQL con cifrado AES-256 y auditoría</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">"Se integra con tu CRM"</div>
+          <div class="comparison-item factory">ES tu CRM, tu panel, tu sistema completo</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">6-12 meses de desarrollo</div>
+          <div class="comparison-item factory">MVP funcional en 30 días</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-item market">Te cobra por hora</div>
+          <div class="comparison-item factory">Inviertes en un activo digital que genera ingresos</div>
+        </div>
+      </div>
+
+      <div class="saas-sectors">
+        <strong style="color: var(--color-text);">Sectores:</strong> Legal y compliance · Fiscal y contable · Salud y bienestar ·
+        Hostelería y turismo · Educación y formación · Y cualquier sector
+        con datos, procesos y conocimiento especializado.
+      </div>
+
+      <div class="saas-metrics">
+        <div class="metric-card">
+          <div class="metric-value">+40.000</div>
+          <div class="metric-label">Documentos procesados por nuestros sistemas de IA</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">AES-256</div>
+          <div class="metric-label">Cifrado de grado bancario en cada plataforma</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">&lt;30 días</div>
+          <div class="metric-label">De idea a MVP funcional</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-value">8</div>
+          <div class="metric-label">Regímenes fiscales de España integrados nativamente</div>
+        </div>
+      </div>
+
+      <div class="saas-cta">
+        <p class="saas-cta-text">"No te vendemos tecnología. Te fabricamos ventaja competitiva."</p>
+        <a href="#contacto" class="btn btn-primary">Solicitar propuesta</a>
       </div>
     </div>
   </section>
@@ -1608,23 +1998,17 @@
             <li><a href="/cookies.html">Cookies</a></li>
           </ul>
         </div>
-        
+
         <div class="footer-section">
-          <h4>Contacto</h4>
+          <h4>Síguenos</h4>
           <ul>
-            <li><a href="mailto:ivamstudioia@gmail.com">Email</a></li>
-            <li><a href="tel:+34629016049">Teléfono</a></li>
+            <li><a href="https://www.instagram.com/ivamstudioia" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/ivamstudioia" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://x.com/ivamstudioia" target="_blank" rel="noopener">X/Twitter</a></li>
+            <li><a href="https://www.youtube.com/@IvAmStudioIA" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.linkedin.com/company/ivamstudioia" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.tiktok.com/@ivam11580" target="_blank" rel="noopener">TikTok</a></li>
           </ul>
-          <!-- Redes sociales - Activar cuando estén disponibles
-          <h4 style="margin-top: 1.5rem;">Síguenos</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">X/Twitter</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">LinkedIn</a></li>
-          </ul>
-          -->
         </div>
       </div>
       
