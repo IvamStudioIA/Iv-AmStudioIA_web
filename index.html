@@ -457,17 +457,72 @@
       background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(17,17,17,0.5) 50%, rgba(0,0,0,0) 100%);
     }
 
-    .saas-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.2rem;
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 50px;
-      color: var(--color-primary);
-      font-size: 0.85rem;
+    .saas-factory-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .saas-pre-title {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #d4af37;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.8rem;
+    }
+
+    .saas-main-title {
       margin-bottom: 1.5rem;
+    }
+
+    .saas-title-line {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 5.5rem;
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: 0.95;
+      display: block;
+    }
+
+    .saas-title-line.white {
+      color: #f5f5f5;
+    }
+
+    .saas-title-line.gold {
+      color: #d4af37;
+      text-shadow: 0 0 80px rgba(212,175,55,0.2);
+    }
+
+    .saas-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+
+    .saas-divider-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(212,175,55,0.4);
+    }
+
+    .saas-divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: #d4af37;
+      transform: rotate(45deg);
+    }
+
+    .saas-tagline {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
     }
 
     .saas-headline {
@@ -1323,6 +1378,20 @@
         grid-template-columns: 1fr;
       }
 
+      .saas-pre-title {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+      }
+
+      .saas-title-line {
+        font-size: 3.2rem;
+      }
+
+      .saas-tagline {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+      }
+
       .saas-headline {
         font-size: 1.8rem;
       }
@@ -1446,8 +1515,18 @@
   <!-- SAAS FACTORY -->
   <section id="saas-factory">
     <div class="container">
-      <div style="text-align: center;">
-        <div class="saas-badge">🏭 SaaS Factory</div>
+      <div class="saas-factory-header">
+        <div class="saas-pre-title">Iv&AmStudio IA presenta</div>
+        <div class="saas-main-title">
+          <span class="saas-title-line white">SaaS</span>
+          <span class="saas-title-line gold">Factory</span>
+        </div>
+        <div class="saas-divider">
+          <div class="saas-divider-line"></div>
+          <div class="saas-divider-diamond"></div>
+          <div class="saas-divider-line"></div>
+        </div>
+        <div class="saas-tagline">Ingeniería de software · Inteligencia artificial · Canarias</div>
       </div>
 
       <h2 class="saas-headline">
