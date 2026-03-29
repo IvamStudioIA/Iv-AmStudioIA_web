@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iv&AmStudio IA | Plataformas SaaS con Inteligencia Artificial | Canarias</title>
+  <meta name="description" content="Fabricamos plataformas SaaS verticales con IA nativa para sectores específicos: fiscal, legal, salud, deporte, automoción. La primera SaaS Factory de Canarias." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Iv&AmStudio IA | Plataformas SaaS con Inteligencia Artificial" />
+  <meta property="og:description" content="Fabricamos plataformas SaaS verticales con IA nativa para sectores específicos. La primera SaaS Factory de Canarias." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ivamstudioia.com" />
+  <meta property="og:image" content="https://ivamstudioia.com/img/logo_ivam.jpg" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iv&AmStudio IA | SaaS Factory con IA" />
+  <meta name="twitter:description" content="Fabricamos plataformas SaaS verticales con IA nativa. Canarias." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="img/logo_ivam.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Iv&AmStudio IA",
+    "url": "https://ivamstudioia.com",
+    "logo": "https://ivamstudioia.com/img/logo_ivam.jpg",
+    "description": "Fabricamos plataformas SaaS verticales con IA nativa para sectores específicos.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tenerife",
+      "addressRegion": "Islas Canarias",
+      "addressCountry": "ES"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34629016049",
+      "email": "ivamstudioia@gmail.com",
+      "contactType": "sales"
+    },
+    "sameAs": [
+      "https://www.instagram.com/ivamstudioia",
+      "https://www.linkedin.com/company/ivamstudioia",
+      "https://www.tiktok.com/@ivamstudioia",
+      "https://x.com/ivamstudioia",
+      "https://www.youtube.com/@IvAmStudioIA",
+      "https://www.facebook.com/ivamstudioia"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --black-light: #111111;
+      --black-card: #141414;
+      --black-hover: #1A1A1A;
+      --gold: #D4AF37;
+      --gold-light: #E8D48B;
+      --gold-dim: rgba(212, 175, 55, 0.3);
+      --gold-glow: rgba(212, 175, 55, 0.15);
+      --gold-border: rgba(212, 175, 55, 0.2);
+      --white: #FFFFFF;
+      --white-soft: #F0F0F0;
+      --gray-100: #E5E5E5;
+      --gray-300: #AAAAAA;
+      --gray-500: #666666;
+      --gray-700: #333333;
+      --green: #2D8C3C;
+      --blue: #2E75B6;
+      --red: #CC3333;
+      --header-height: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: #050505;
+      color: var(--white);
+      font-family: "DM Sans", "Space Grotesk", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    /* ========= MATRIX CANVAS ========= */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* All content floats above the matrix */
+    .page-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ========= LAYOUT ========= */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 140px 0; position: relative; }
+
+    /* ========= ANIMATIONS ========= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ========= HEADER PREMIUM ========= */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 20px 0;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      z-index: 1000;
+      transition: padding 0.3s ease;
+    }
+
+    .header.compact {
+      padding: 12px 0;
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 3.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: filter 0.3s ease;
+    }
+
+    .nav-brand:hover {
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+    }
+
+    .nav-brand img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+    }
+
+    .nav-brand-text {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .nav-brand-text span { color: var(--gold); }
+
+    .nav-separator {
+      width: 1px;
+      height: 20px;
+      background: rgba(212, 175, 55, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #999;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:not(.nav-cta):hover { color: var(--gold); }
+    .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+    .nav-links a:not(.nav-cta).active { color: var(--gold); }
+    .nav-links a:not(.nav-cta).active::after { width: 100%; }
+
+    .nav-cta {
+      background: transparent;
+      color: var(--gold) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--black) !important;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-overlay.active { display: flex; }
+
+    .mobile-overlay a {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gray-100);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-overlay a:hover { color: var(--gold); }
+
+    /* ========= HERO ========= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--header-height) + 2rem) 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      background: url('images/factory-hero-bg.png') center center / cover no-repeat;
+    }
+
+    /* Dark overlay for text readability */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.75);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      margin: 0 auto 2.5rem;
+      overflow: hidden;
+    }
+
+    .hero-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-pretitle {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: "DM Sans", sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--gray-300);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--gold);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ========= STATS BAR ========= */
+    .stats-bar {
+      background: rgba(17, 17, 17, 0.7);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 3rem 0;
+    }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+
+    .stat-number {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.85rem;
+      color: var(--gray-300);
+      line-height: 1.4;
+    }
+
+    /* ========= SECTION HEADERS ========= */
+    .section-pretitle {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.1rem;
+      color: var(--gray-300);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    .section-header { margin-bottom: 4rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+
+    /* ========= PRODUCTS BENTO ========= */
+    .products { background: transparent; }
+
+    .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+
+    .product-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.08);
+    }
+
+    .product-card:hover::before { opacity: 1; }
+
+    .product-card:nth-child(1) { grid-column: span 7; }
+    .product-card:nth-child(2) { grid-column: span 5; }
+    .product-card:nth-child(3) { grid-column: span 5; }
+    .product-card:nth-child(4) { grid-column: span 7; }
+    .product-card:nth-child(5) { grid-column: span 6; }
+    .product-card:nth-child(6) { grid-column: span 6; }
+
+    .product-logo { width: 80px; height: 80px; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; transition: filter 0.3s ease; }
+    .product-card:hover .product-logo { filter: brightness(1.15); }
+    .product-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .product-name { font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .product-tagline { font-family: "DM Sans", sans-serif; font-size: 0.95rem; color: var(--gold-light); margin-bottom: 1rem; }
+    .product-description { font-family: "DM Sans", sans-serif; font-size: 0.9rem; color: var(--gray-300); line-height: 1.6; margin-bottom: 1.5rem; flex: 1; }
+
+    .product-features { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+
+    .product-feature-tag {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-100);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .product-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      width: fit-content;
+    }
+
+    .product-status .dot { width: 7px; height: 7px; border-radius: 50%; }
+    .status-production { background: rgba(45, 140, 60, 0.15); color: #4ade80; }
+    .status-production .dot { background: #4ade80; }
+    .status-development { background: rgba(46, 117, 182, 0.15); color: #60a5fa; }
+    .status-development .dot { background: #60a5fa; }
+
+    /* ========= METHODOLOGY ========= */
+    .methodology { background: transparent; }
+
+    /* Methodology image-based layout */
+    .methodology-visual {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+      background: url('images/methodology-bg.png') center center / cover no-repeat;
+    }
+
+    .methodology-visual-bg {
+      display: none;
+    }
+
+    .methodology-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.65);
+      border-radius: 20px;
+    }
+
+    .methodology-phases {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3.5rem 2rem;
+      z-index: 2;
+    }
+
+    .meth-phase {
+      text-align: center;
+      flex: 1;
+      max-width: 180px;
+    }
+
+    .meth-phase.reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .meth-phase.reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .meth-phase-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      font-size: 1.2rem;
+      color: var(--gold);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .meth-phase:hover .meth-phase-icon {
+      background: rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .meth-phase-arrow {
+      color: var(--gold);
+      font-size: 1.5rem;
+      opacity: 0.4;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .meth-phase-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .meth-phase-sub {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .meth-phase-desc {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.72rem;
+      color: var(--gray-300);
+      line-height: 1.4;
+    }
+
+    .loop-closing {
+      text-align: center;
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      color: var(--gray-500);
+      font-style: italic;
+      margin-bottom: 4rem;
+    }
+
+    /* Mobile: vertical list */
+    .loop-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .loop-mobile::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold), rgba(212, 175, 55, 0.1));
+    }
+
+    .loop-mobile-item {
+      position: relative;
+      padding: 1.5rem 0;
+    }
+
+    .loop-mobile-item::before {
+      content: "";
+      position: absolute;
+      left: -2.5rem;
+      top: 50%;
+      transform: translate(8px, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--black);
+      border: 2px solid var(--gold);
+    }
+
+    .loop-mobile-num {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .loop-mobile-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .loop-mobile-sub {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .loop-mobile-desc {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    .methodology-quote {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 0;
+      position: relative;
+    }
+
+    .methodology-quote::before {
+      content: "\201C";
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 6rem;
+      color: var(--gold-dim);
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+    }
+
+    .methodology-quote p {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--gold-light);
+      line-height: 1.6;
+      font-style: italic;
+      padding-top: 2rem;
+    }
+
+    /* ========= COMPARATIVA ========= */
+    .comparativa { background: transparent; }
+
+    .compare-grid { display: grid; gap: 1rem; max-width: 900px; margin: 0 auto; }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: border-color 0.3s ease;
+    }
+
+    .compare-row:hover { border-color: var(--gold-border); }
+    .compare-bad { font-family: "DM Sans", sans-serif; font-size: 0.92rem; color: var(--gray-500); text-decoration: line-through; text-decoration-color: rgba(204, 51, 51, 0.4); }
+    .compare-arrow { color: var(--gold-dim); font-size: 1.2rem; }
+    .compare-good { font-family: "DM Sans", sans-serif; font-size: 0.92rem; color: var(--gold-light); font-weight: 500; }
+
+    /* ========= VERTICALS ========= */
+    .verticals { background: transparent; padding: 100px 0; }
+
+    .vertical-grid-top, .vertical-grid-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .vertical-grid-bottom { margin-top: 1.5rem; }
+
+    .vertical-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      transition: border-color 0.4s ease;
+    }
+
+    .vertical-item:hover { border-color: rgba(212, 175, 55, 0.2); }
+
+    .vertical-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vertical-item:hover .vertical-bg { transform: scale(1.03); }
+
+    .vertical-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);
+    }
+
+    .vertical-content {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem;
+      width: 100%;
+    }
+
+    .vertical-content img { width: 48px; height: 48px; border-radius: 10px; margin-bottom: 0.75rem; }
+    .vertical-content h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .vertical-content p { font-family: "DM Sans", sans-serif; font-size: 0.9rem; color: var(--gray-300); }
+
+    /* ========= SECTORS ========= */
+    .sectors { background: transparent; }
+
+    .sector-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 4rem; }
+
+    .sector-tag {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-100);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.12);
+      padding: 0.7rem 1.4rem;
+      border-radius: 100px;
+      transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .sector-tag:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.08); color: var(--gold-light); }
+
+    .cta-block { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-block h3 { font-family: "Playfair Display", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--white); margin-bottom: 1.5rem; }
+
+    /* ========= FOOTER PREMIUM ========= */
+    .footer-cta {
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, rgba(17, 17, 17, 0.9) 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .footer-cta h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-cta .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--gold);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-cta .btn-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .footer-main {
+      background: rgba(17, 17, 17, 0.75);
+      padding: 4rem 0 3rem;
+      position: relative;
+    }
+
+    .footer-main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand img { width: 56px; height: 56px; border-radius: 14px; margin-bottom: 1rem; }
+    .footer-brand-name { font-family: "Space Grotesk", sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .footer-brand-tagline { font-family: "DM Sans", sans-serif; font-size: 0.9rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .footer-brand-location { font-family: "DM Sans", sans-serif; font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0.5rem; }
+    .footer-brand-badge { font-family: "DM Sans", sans-serif; font-size: 0.8rem; color: var(--gray-500); }
+
+    .footer-heading {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-list li { margin-bottom: 0.75rem; }
+
+    .footer-list a, .footer-list span {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.9rem;
+      color: #777;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-list a:hover { color: var(--gold); }
+
+    .footer-icon {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .footer-social { display: grid; grid-template-columns: repeat(3, 40px); gap: 12px; }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+    }
+
+    .icon-svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .footer-legal-bar {
+      background: rgba(8, 8, 8, 0.75);
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+    }
+
+    .footer-legal-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-legal-bar p {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-legal-links a {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+
+    .footer-legal-links a:hover { color: var(--gold); }
+
+    /* ========= RESPONSIVE ========= */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .vertical-grid-top, .vertical-grid-bottom { grid-template-columns: 1fr 1fr; }
+      .methodology-visual { display: none; }
+      .loop-mobile { display: flex; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 100px 0; }
+      .nav-links, .nav-separator { display: none; }
+      .menu-toggle { display: flex; }
+      .header .container { padding: 0 1.5rem; }
+
+      .bento-grid { grid-template-columns: 1fr; }
+      .product-card:nth-child(1), .product-card:nth-child(2), .product-card:nth-child(3),
+      .product-card:nth-child(4), .product-card:nth-child(5), .product-card:nth-child(6) { grid-column: span 1; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .compare-row { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+      .compare-arrow { display: none; }
+
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-social { justify-content: center; margin: 0 auto; }
+      .footer-list a, .footer-list span { justify-content: center; }
+
+      .vertical-grid-top, .vertical-grid-bottom { grid-template-columns: 1fr; }
+
+      .footer-legal-bar .container { flex-direction: column; text-align: center; }
+      .footer-legal-links { justify-content: center; }
+
+      .hero-buttons { flex-direction: column; align-items: center; }
+
+      .methodology-visual { display: none; }
+      .loop-mobile { display: flex; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .hero-logo { width: 90px; height: 90px; }
+      .product-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========= MATRIX RAIN CANVAS ========= -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- ========= PAGE CONTENT (z-index above matrix) ========= -->
+  <div class="page-content">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="nav-left">
+        <a href="#hero" class="nav-brand">
+          <img src="img/logo_ivam.jpg" alt="Iv&AmStudio IA Logo" width="44" height="44" />
+          <span class="nav-brand-text">Iv&Am<span>Studio IA</span></span>
+        </a>
+        <div class="nav-separator"></div>
+      </div>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobileMenu">
+    <a href="#productos" class="mobile-nav-link">Productos</a>
+    <a href="#metodologia" class="mobile-nav-link">Metodología</a>
+    <a href="#sectores" class="mobile-nav-link">Sectores</a>
+    <a href="#contacto" class="mobile-nav-link">Contacto</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-logo reveal">
+        <img src="img/logo_ivam.jpg" alt="Iv&AmStudio IA" width="120" height="120" />
+      </div>
+      <p class="hero-pretitle reveal">Ingeniería de Software · Inteligencia Artificial · Canarias</p>
+      <h1 class="reveal">Fabricamos plataformas SaaS<br>con IA nativa para tu sector</h1>
+      <p class="hero-subtitle reveal">No integramos IA en tu negocio. Construimos tu negocio sobre IA. Plataformas completas para sectores específicos: fiscal, legal, deportivo, salud, automoción.</p>
+      <div class="hero-buttons reveal">
+        <a href="#productos" class="btn-primary">Descubre nuestros productos</a>
+        <a href="#contacto" class="btn-secondary">Solicitar propuesta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="40000" data-prefix="+">+0</div>
+          <div class="stat-label">documentos procesados por IA</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="6">0</div>
+          <div class="stat-label">plataformas verticales</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="256" data-suffix="-bit">0-bit</div>
+          <div class="stat-label">cifrado AES bancario</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number" data-target="30" data-prefix="<" data-suffix=" días">&lt;0 días</div>
+          <div class="stat-label">de idea a MVP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section class="section products" id="productos">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="section-pretitle">Nuestras Plataformas</p>
+        <h2 class="section-title">Una suite de productos verticales con IA</h2>
+        <p class="section-subtitle">Cada plataforma es una solución completa para un sector específico. No plantillas. No chatbots. Ingeniería real.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/asesoria-logo.png" alt="AsesorIA - Plataforma fiscal con IA" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">AsesorIA</h3>
+          <p class="product-tagline">Plataforma integral para asesorías fiscales con IA</p>
+          <p class="product-description">6 agentes de IA especializados. RAG con normativa fiscal española. Dashboard multicliente. Calendario fiscal automatizado. Cobertura de los 8 territorios fiscales incluyendo IGIC Canarias.</p>
+          <div class="product-features"><span class="product-feature-tag">Agentes IA fiscales</span><span class="product-feature-tag">RAG normativo</span><span class="product-feature-tag">Dashboard multicliente</span><span class="product-feature-tag">Facturación IGIC</span></div>
+          <div class="product-status status-production"><span class="dot"></span> En producción</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/apexpro-logo.png" alt="ApexPro - Gestión de talleres mecánicos" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">ApexPro</h3>
+          <p class="product-tagline">Gestión inteligente de talleres mecánicos</p>
+          <p class="product-description">Gestión administrativa completa. Reservas con cobro anticipado. Presupuestos automáticos con IA. Inventario de repuestos. Calendario de mecánicos.</p>
+          <div class="product-features"><span class="product-feature-tag">Presupuestos IA</span><span class="product-feature-tag">Reservas online</span><span class="product-feature-tag">Inventario</span><span class="product-feature-tag">Facturación</span></div>
+          <div class="product-status status-development"><span class="dot"></span> En desarrollo</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/axismedical-logo.png" alt="AxisMedical - Gestión de clínicas de salud" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">AxisMedical</h3>
+          <p class="product-tagline">Plataforma de gestión para clínicas de salud</p>
+          <p class="product-description">Gestión de pacientes e historiales. Sistema de citas inteligente. Chat nativo clínica-paciente. Recordatorios automáticos. Portal del paciente. Facturación integrada.</p>
+          <div class="product-features"><span class="product-feature-tag">Gestión pacientes</span><span class="product-feature-tag">Citas IA</span><span class="product-feature-tag">Portal paciente</span><span class="product-feature-tag">RGPD nativo</span></div>
+          <div class="product-status status-development"><span class="dot"></span> En desarrollo</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/smashpro-logo.png" alt="SmashPro - App de pádel con matchmaking IA" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">SmashPro</h3>
+          <p class="product-tagline">Matchmaking automático por categorías para clubes de pádel</p>
+          <p class="product-description">Motor de matchmaking con IA que organiza partidos automáticamente. Convocatorias, suplentes, cobro individual por jugador. Detección de abandono. Rotación inteligente de parejas. PWA instalable con marca del club.</p>
+          <div class="product-features"><span class="product-feature-tag">Matchmaking IA</span><span class="product-feature-tag">Cobro individual</span><span class="product-feature-tag">PWA white-label</span><span class="product-feature-tag">Métricas</span></div>
+          <div class="product-status status-development"><span class="dot"></span> En desarrollo</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/lexone-logo.png" alt="LexOne - Sistema para despachos de abogados" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">LexOne</h3>
+          <p class="product-tagline">Sistema integral para despachos de abogados</p>
+          <p class="product-description">Gestión de expedientes y casos. Base de datos jurisprudencial con búsqueda semántica. Generación de documentos con IA. Calendario procesal. Portal del cliente.</p>
+          <div class="product-features"><span class="product-feature-tag">Expedientes</span><span class="product-feature-tag">IA jurídica</span><span class="product-feature-tag">Documentos auto</span><span class="product-feature-tag">Portal cliente</span></div>
+          <div class="product-status status-development"><span class="dot"></span> En desarrollo</div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-logo"><img src="img/ivambilling-logo.png" alt="IvAm Billing - Facturación y gestión empresarial" width="80" height="80" loading="lazy" /></div>
+          <h3 class="product-name">IvAm Billing</h3>
+          <p class="product-tagline">Facturación, contratos y gestión empresarial</p>
+          <p class="product-description">Sistema de facturación con IGIC automático. Generación de contratos. Gestión de clientes y suscripciones. Alertas de permanencia. Integración con Stripe. Envío automático de facturas.</p>
+          <div class="product-features"><span class="product-feature-tag">Facturación IGIC</span><span class="product-feature-tag">Contratos</span><span class="product-feature-tag">Suscripciones</span><span class="product-feature-tag">Stripe</span></div>
+          <div class="product-status status-production"><span class="dot"></span> En producción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHODOLOGY — AGENTIC LOOP ============ -->
+  <section class="section methodology" id="metodologia">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="section-pretitle">Nuestra Metodología</p>
+        <h2 class="section-title">SaaS Factory: de la idea al producto en semanas</h2>
+        <p class="section-subtitle">Un proceso industrial de 5 fases para diseñar, construir y desplegar plataformas SaaS de grado empresarial con IA integrada en cada capa.</p>
+      </div>
+
+      <!-- Desktop: Image-based methodology visual -->
+      <div class="methodology-visual reveal">
+        <img src="images/methodology-bg.png" alt="Ciclo de producción SaaS Factory" class="methodology-visual-bg" loading="lazy" />
+        <div class="methodology-visual-overlay"></div>
+        <div class="methodology-phases">
+          <div class="meth-phase reveal">
+            <div class="meth-phase-icon">01</div>
+            <p class="meth-phase-name">Delimitar</p>
+            <p class="meth-phase-sub">Definición del alcance</p>
+            <p class="meth-phase-desc">Sector, usuarios, flujos críticos. Límites claros desde el primer día.</p>
+          </div>
+          <span class="meth-phase-arrow">&#9654;</span>
+          <div class="meth-phase reveal">
+            <div class="meth-phase-icon">02</div>
+            <p class="meth-phase-name">Planificar</p>
+            <p class="meth-phase-sub">Arquitectura y hoja de ruta</p>
+            <p class="meth-phase-desc">Diseño técnico, módulos y prioridades de construcción.</p>
+          </div>
+          <span class="meth-phase-arrow">&#9654;</span>
+          <div class="meth-phase reveal">
+            <div class="meth-phase-icon">03</div>
+            <p class="meth-phase-name">Construir</p>
+            <p class="meth-phase-sub">Bucle agéntico de IA</p>
+            <p class="meth-phase-desc">Agentes de IA ejecutan, testean e iteran en ciclos continuos.</p>
+          </div>
+          <span class="meth-phase-arrow">&#9654;</span>
+          <div class="meth-phase reveal">
+            <div class="meth-phase-icon">04</div>
+            <p class="meth-phase-name">Validar</p>
+            <p class="meth-phase-sub">Testing y refinamiento</p>
+            <p class="meth-phase-desc">Cada módulo se prueba, corrige y pule antes de avanzar.</p>
+          </div>
+          <span class="meth-phase-arrow">&#9654;</span>
+          <div class="meth-phase reveal">
+            <div class="meth-phase-icon">05</div>
+            <p class="meth-phase-name">Desplegar</p>
+            <p class="meth-phase-sub">Producción y escala</p>
+            <p class="meth-phase-desc">Infraestructura cloud con monitorización y mejora continua.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile: Vertical list -->
+      <div class="loop-mobile">
+        <div class="loop-mobile-item reveal">
+          <p class="loop-mobile-num">Fase 01</p>
+          <p class="loop-mobile-name">Delimitar</p>
+          <p class="loop-mobile-sub">Definición del alcance</p>
+          <p class="loop-mobile-desc">Cada plataforma comienza con límites claros: sector, usuarios, flujos críticos.</p>
+        </div>
+        <div class="loop-mobile-item reveal">
+          <p class="loop-mobile-num">Fase 02</p>
+          <p class="loop-mobile-name">Planificar</p>
+          <p class="loop-mobile-sub">Arquitectura y hoja de ruta</p>
+          <p class="loop-mobile-desc">Diseño de la estructura técnica, módulos y prioridades de construcción.</p>
+        </div>
+        <div class="loop-mobile-item reveal">
+          <p class="loop-mobile-num">Fase 03</p>
+          <p class="loop-mobile-name">Construir</p>
+          <p class="loop-mobile-sub">Bucle agéntico de IA</p>
+          <p class="loop-mobile-desc">Agentes de IA especializados ejecutan, testean e iteran el código en ciclos continuos.</p>
+        </div>
+        <div class="loop-mobile-item reveal">
+          <p class="loop-mobile-num">Fase 04</p>
+          <p class="loop-mobile-name">Validar</p>
+          <p class="loop-mobile-sub">Testing y refinamiento</p>
+          <p class="loop-mobile-desc">Cada módulo se prueba, se corrige y se pule antes de avanzar.</p>
+        </div>
+        <div class="loop-mobile-item reveal">
+          <p class="loop-mobile-num">Fase 05</p>
+          <p class="loop-mobile-name">Desplegar</p>
+          <p class="loop-mobile-sub">Producción y escala</p>
+          <p class="loop-mobile-desc">Lanzamiento en infraestructura cloud con monitorización y mejora continua.</p>
+        </div>
+      </div>
+
+      <p class="loop-closing reveal">Cada plataforma atraviesa este ciclo. Sin atajos. Sin improvisación.</p>
+
+      <div class="methodology-quote reveal">
+        <p>La mayoría de agencias te venden un chatbot y lo llaman transformación digital. Nosotros construimos el sistema operativo completo de tu sector.</p>
+      </div>
+
+      <!-- SaaS Factory visual -->
+      <div class="factory-visual reveal" style="position:relative;border-radius:20px;overflow:hidden;margin-top:2rem;min-height:400px;border:1px solid rgba(212,175,55,0.1);">
+        <div style="position:absolute;inset:0;background-image:url('images/saas-factory-bg.png');background-size:cover;background-position:center;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.4) 50%,rgba(10,10,10,0.6) 100%);"></div>
+        <div style="position:relative;z-index:2;padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:400px;">
+          <p style="font-family:'Space Grotesk',sans-serif;font-size:0.75rem;font-weight:600;color:#D4AF37;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.75rem;">La forja</p>
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#fff;margin-bottom:0.5rem;">Donde el código se convierte en producto</h3>
+          <p style="font-family:'DM Sans',sans-serif;font-size:1rem;color:#aaa;max-width:500px;">Cada plataforma se forja con la misma disciplina: infraestructura sólida, IA nativa, arquitectura real y despliegue en semanas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARATIVA ============ -->
+  <section class="section comparativa">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="section-pretitle">La diferencia</p>
+        <h2 class="section-title">Lo que hace el mercado vs. lo que hacemos nosotros</h2>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-row reveal"><span class="compare-bad">Te vende un chatbot genérico</span><span class="compare-arrow">→</span><span class="compare-good">Construye una plataforma completa con IA nativa</span></div>
+        <div class="compare-row reveal"><span class="compare-bad">Usa plantillas de Zapier/Make</span><span class="compare-arrow">→</span><span class="compare-good">Desarrolla arquitecturas a medida</span></div>
+        <div class="compare-row reveal"><span class="compare-bad">Base de datos en Airtable</span><span class="compare-arrow">→</span><span class="compare-good">PostgreSQL con cifrado AES-256 y auditoría</span></div>
+        <div class="compare-row reveal"><span class="compare-bad">"Se integra con tu CRM"</span><span class="compare-arrow">→</span><span class="compare-good">ES tu CRM, tu panel, tu sistema completo</span></div>
+        <div class="compare-row reveal"><span class="compare-bad">6-12 meses de desarrollo</span><span class="compare-arrow">→</span><span class="compare-good">MVP funcional en 30 días</span></div>
+        <div class="compare-row reveal"><span class="compare-bad">Te cobra por hora</span><span class="compare-arrow">→</span><span class="compare-good">Inviertes en un activo digital que genera ingresos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERTICALS ============ -->
+  <section class="verticals" id="verticales">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="section-pretitle">Verticales</p>
+        <h2 class="section-title">Plataformas diseñadas para cada industria</h2>
+      </div>
+      <div class="vertical-grid-top">
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/asesoria-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/asesoria-logo.png" alt="AsesorIA" width="48" height="48" loading="lazy" /><h3>AsesorIA</h3><p>Asesorías fiscales con 6 agentes IA especializados</p></div>
+        </div>
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/apexpro-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/apexpro-logo.png" alt="ApexPro" width="48" height="48" loading="lazy" /><h3>ApexPro</h3><p>Gestión inteligente de talleres mecánicos</p></div>
+        </div>
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/axismedical-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/axismedical-logo.png" alt="AxisMedical" width="48" height="48" loading="lazy" /><h3>AxisMedical</h3><p>Plataforma de gestión para clínicas de salud</p></div>
+        </div>
+      </div>
+      <div class="vertical-grid-bottom">
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/smashpro-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/smashpro-logo.png" alt="SmashPro" width="48" height="48" loading="lazy" /><h3>SmashPro</h3><p>Matchmaking IA para clubes de pádel</p></div>
+        </div>
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/lexone-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/lexone-logo.png" alt="LexOne" width="48" height="48" loading="lazy" /><h3>LexOne</h3><p>Sistema integral para despachos de abogados</p></div>
+        </div>
+        <div class="vertical-item reveal">
+          <div class="vertical-bg" style="background-image: url('images/ivambilling-bg.png');"></div>
+          <div class="vertical-overlay"></div>
+          <div class="vertical-content"><img src="img/ivambilling-logo.png" alt="IvAm Billing" width="48" height="48" loading="lazy" /><h3>IvAm Billing</h3><p>Facturación, contratos y gestión empresarial</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTORS ============ -->
+  <section class="section sectors" id="sectores">
+    <div class="container">
+      <div class="section-header center reveal">
+        <p class="section-pretitle">Sectores</p>
+        <h2 class="section-title">¿En qué sector opera tu negocio?</h2>
+        <p class="section-subtitle">Si tu sector tiene datos, procesos y conocimiento especializado, podemos construir tu plataforma.</p>
+      </div>
+      <div class="sector-tags reveal">
+        <span class="sector-tag">Fiscal y contable</span>
+        <span class="sector-tag">Legal y compliance</span>
+        <span class="sector-tag">Salud y bienestar</span>
+        <span class="sector-tag">Deporte y ocio</span>
+        <span class="sector-tag">Automoción</span>
+        <span class="sector-tag">Hostelería y turismo</span>
+        <span class="sector-tag">Educación y formación</span>
+        <span class="sector-tag">Inmobiliaria</span>
+        <span class="sector-tag">Logística</span>
+        <span class="sector-tag">Y cualquier sector con datos y procesos</span>
+      </div>
+      <div class="cta-block reveal">
+        <h3>¿Listo para tener tu propia plataforma?</h3>
+        <a href="#contacto" class="btn-primary">Solicitar propuesta para mi sector</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER PREMIUM ============ -->
+  <!-- Block 1: CTA -->
+  <div class="footer-cta" id="contacto">
+    <div class="container">
+      <h2 class="reveal">¿Tienes un sector. Nosotros tenemos la fábrica.</h2>
+      <a href="mailto:ivamstudioia@gmail.com" class="btn-cta reveal">Hablemos</a>
+    </div>
+  </div>
+
+  <!-- Block 2: Info -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo_ivam.jpg" alt="Iv&AmStudio IA" width="56" height="56" />
+          <p class="footer-brand-name">Iv&AmStudio IA</p>
+          <p class="footer-brand-tagline">Inteligencia que convierte</p>
+          <p class="footer-brand-location">Tenerife, Islas Canarias</p>
+          <p class="footer-brand-badge">Hecho en Canarias &#127470;&#127464;</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contacto</h4>
+          <ul class="footer-list">
+            <li><a href="mailto:ivamstudioia@gmail.com"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>ivamstudioia@gmail.com</a></li>
+            <li><a href="https://wa.me/34629016049" target="_blank" rel="noopener"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+34 629 016 049</a></li>
+            <li><a href="https://t.me/ivamstudiobot" target="_blank" rel="noopener"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.87 7.97-3.43 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.53.17.14.12.18.28.2.45-.01.06.01.24 0 .38z"/></svg>@ivamstudiobot</a></li>
+            <li><span><svg class="footer-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>L-V 10:00-16:00h</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Plataformas</h4>
+          <ul class="footer-list">
+            <li><a href="#productos">AsesorIA</a></li>
+            <li><a href="#productos">ApexPro</a></li>
+            <li><a href="#productos">AxisMedical</a></li>
+            <li><a href="#productos">SmashPro</a></li>
+            <li><a href="#productos">LexOne</a></li>
+            <li><a href="#productos">IvAm Billing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/ivamstudioia" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ivamstudioia" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.tiktok.com/@ivamstudioia" target="_blank" rel="noopener" aria-label="TikTok"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="https://x.com/ivamstudioia" target="_blank" rel="noopener" aria-label="X / Twitter"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.youtube.com/@IvAmStudioIA" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://www.facebook.com/ivamstudioia" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Block 3: Legal bar -->
+  <div class="footer-legal-bar">
+    <div class="container">
+      <p>&copy; 2026 Iv&AmStudio IA</p>
+      <p>Made in Tenerife with &#10084;&#65039;</p>
+      <div class="footer-legal-links">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- end .page-content -->
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    (function() {
+      'use strict';
+
+      // ======== MATRIX RAIN ========
+      var canvas = document.getElementById('matrixCanvas');
+      var ctx = canvas.getContext('2d');
+      var chars = '0123456789{}<>/=;ABCDEFabcdef+-*[]()#@&%';
+      var fontSize = 13;
+      var columns;
+      var drops;
+
+      function initMatrix() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = Math.floor(canvas.width / 28);
+        drops = [];
+        for (var i = 0; i < columns; i++) {
+          drops[i] = Math.random() * -100;
+        }
+      }
+
+      function drawMatrix() {
+        ctx.fillStyle = 'rgba(10, 10, 10, 0.08)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.font = fontSize + 'px monospace';
+
+        for (var i = 0; i < drops.length; i++) {
+          var char = chars[Math.floor(Math.random() * chars.length)];
+          var x = i * 28;
+          var y = drops[i] * fontSize;
+
+          // Head character (brighter)
+          ctx.fillStyle = 'rgba(0, 255, 0, 0.15)';
+          ctx.fillText(char, x, y);
+
+          // Trail characters (very subtle)
+          if (drops[i] > 1) {
+            var trailChar = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillStyle = 'rgba(0, 255, 0, 0.04)';
+            ctx.fillText(trailChar, x, y - fontSize);
+          }
+
+          if (y > canvas.height && Math.random() > 0.985) {
+            drops[i] = 0;
+          }
+          drops[i] += 0.4;
+        }
+        requestAnimationFrame(drawMatrix);
+      }
+
+      initMatrix();
+      drawMatrix();
+      window.addEventListener('resize', initMatrix);
+
+      // ======== HEADER SCROLL ========
+      var header = document.getElementById('header');
+
+      function onScroll() {
+        if (window.scrollY > 50) {
+          header.classList.add('compact');
+        } else {
+          header.classList.remove('compact');
+        }
+
+        // Active nav link
+        var sections = document.querySelectorAll('section[id], .footer-cta[id]');
+        var navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+        var scrollPos = window.scrollY + 200;
+
+        navLinks.forEach(function(link) { link.classList.remove('active'); });
+
+        for (var i = sections.length - 1; i >= 0; i--) {
+          var section = sections[i];
+          if (section.offsetTop <= scrollPos) {
+            var id = section.getAttribute('id');
+            navLinks.forEach(function(link) {
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+            break;
+          }
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // ======== MOBILE MENU ========
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileMenu = document.getElementById('mobileMenu');
+
+      menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      var mobileLinks = mobileMenu.querySelectorAll('a');
+      for (var i = 0; i < mobileLinks.length; i++) {
+        mobileLinks[i].addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+
+      // ======== REVEAL ON SCROLL ========
+      var reveals = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var parent = entry.target.parentElement;
+              if (parent) {
+                var siblings = parent.querySelectorAll('.reveal');
+                var index = Array.prototype.indexOf.call(siblings, entry.target);
+                entry.target.style.transitionDelay = (index * 0.1) + 's';
+              }
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(function(el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+      }
+
+      // ======== COUNTER ANIMATION ========
+      var counters = document.querySelectorAll('.stat-number[data-target]');
+      var counterStarted = {};
+
+      if ('IntersectionObserver' in window) {
+        var counterObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var id = el.getAttribute('data-target');
+              if (counterStarted[id]) return;
+              counterStarted[id] = true;
+
+              var target = parseInt(el.getAttribute('data-target'), 10);
+              var prefix = el.getAttribute('data-prefix') || '';
+              var suffix = el.getAttribute('data-suffix') || '';
+              var duration = 2000;
+              var startTime = null;
+
+              function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+              function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var current = Math.floor(easeOut(progress) * target);
+                el.textContent = prefix + current.toLocaleString('es-ES') + suffix;
+                if (progress < 1) {
+                  requestAnimationFrame(animate);
+                } else {
+                  el.textContent = prefix + target.toLocaleString('es-ES') + suffix;
+                }
+              }
+
+              requestAnimationFrame(animate);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function(el) { counterObserver.observe(el); });
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
